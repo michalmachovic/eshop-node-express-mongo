@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(186, 229, 235);
+}
+
+.products {
+}
+
+.products > div {
+    border: 1px solid grey;
+    margin-bottom: 10px;
+    padding: 10px;
+}s

@@ -1,0 +1,34 @@
+<%- include('includes/head.ejs') %>
+<title><%= pageTitle %></title>
+</head>
+
+<body>
+    <%- include('includes/nav.ejs') %>
+    <h2>Add product</h2>
+    <form method="post" action="/admin/add-product">
+        <div>
+            <label for="title">
+                Title
+            </label>
+            <input type="text" name="title" />
+        </div>    
+
+        <div>
+            <label for="description">
+                Description
+            </label>
+            <input type="text" name="description" />    
+        </div>
+
+        <div>    
+            <label for="price">
+                Price
+            </label>
+            <input type="text" name="price" />    
+        </div>
+        
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
