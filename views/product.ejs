@@ -1,0 +1,21 @@
+<%- include('includes/head.ejs') %>
+<title><%= pageTitle %></title>
+</head>
+
+<body>
+    <%- include('includes/nav.ejs') %>
+    <h2><%= product.title %></h2>
+        <div class="products">
+                <div>
+                    <div>
+                        <%= product.description %>
+                    </div>
+
+                    <div>
+                        <%= product.price %>
+                    </div>
+                    
+                </div>
+        </div>    
+</body>
+</html>

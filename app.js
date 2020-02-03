@@ -6,6 +6,10 @@ const app = express();
 const shopRoutes = require('./routes/shop');
 const adminRoutes = require('./routes/admin');
 
+const mongoConnect = require('./util/db').mongoConnect;
+
+
+
 //set template engine to EJS
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -27,4 +31,6 @@ app.get('/', (req, res, next) => {
 });
 
 
-app.listen(3000);
+mongoConnect(()  => {
+    app.listen(3000);
+});
