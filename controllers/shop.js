@@ -34,5 +34,14 @@ exports.getProduct = (req, res, next) => {
                 pageTitle: 'product'
             });
         });
+}
 
+exports.getEditProduct = (req, res, next) => {
+    Product.fetchById(req.params.productId).
+        then(product => {
+            res.render('product-edit', {
+                product: product,
+                pageTitle: 'product'
+            });
+        });
 }

@@ -1,0 +1,26 @@
+<%- include('includes/head.ejs') %>
+<title><%= pageTitle %></title>
+</head>
+
+<body>
+    <%- include('includes/nav.ejs') %>
+    <h2><%= product.title %></h2>
+        <div class="products">
+                <div>
+                    <form method="post" action="/admin/save-product">
+                        <div>
+                            <input type="text" id="description" value="<%= product.description %>" />
+                        </div>
+
+                        <div>
+                            <input type="text" id="price" value="<%= product.price %>" />
+                        </div>
+
+                        <div>
+                            <input type="submit" value="save" />
+                        </div>
+                    </form>
+                </div>
+        </div>    
+</body>
+</html>
