@@ -7,13 +7,13 @@
     <h2><%= product.title %></h2>
         <div class="products">
                 <div>
-                    <form method="post" action="/admin/save-product">
+                    <form method="post" action="/admin/update-product/<%= product._id %>">
                         <div>
-                            <input type="text" id="description" value="<%= product.description %>" />
+                            <input type="text" name="description" value="<%= product.description %>" />
                         </div>
 
                         <div>
-                            <input type="text" id="price" value="<%= product.price %>" />
+                            <input type="text" name="price" value="<%= product.price %>" />
                         </div>
 
                         <div>

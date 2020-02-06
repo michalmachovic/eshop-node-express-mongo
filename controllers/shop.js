@@ -45,3 +45,8 @@ exports.getEditProduct = (req, res, next) => {
             });
         });
 }
+
+exports.postUpdateProduct = (req, res, next) => {
+    Product.updateById(req.params.productId, req.body);
+    res.redirect('/');
+}

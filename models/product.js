@@ -52,6 +52,16 @@ class Product {
             console.log(err);
         })
     }
+
+    static updateById(prodId, values) {
+        const db = getDb();
+        db
+        .collection('products')
+        .updateOne(
+            { _id: new mongodb.ObjectId(prodId) }, 
+            { $set: values }
+        );
+    }
 }
 
 module.exports = Product;
