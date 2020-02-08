@@ -4,12 +4,12 @@
 
 <body>
     <%- include('includes/nav.ejs') %>
+    <main>
     <h2>Products</h2>
-    <% if (products.length > 0) { %>
-        <div class="products">
-            <% products.forEach(function(item) {  %>
-                <div>
-                    <a href="/products/<%= item._id %>">
+        <% if (products.length > 0) { %>
+            <div class="products">
+                <% products.forEach(function(item) {  %>
+                    <div>
                         <h3>
                             <%= item.title %>
                         </h3>
@@ -23,13 +23,13 @@
                         </div>
 
                         <div class="actions">
-                            <a href="/admin/edit-product/<%= item._id %>">Edit</a>
+                            <a href="/products/<%= item._id %>">Detail</a>
+                            <a href="/admin/product-edit/<%= item._id %>">Edit</a>
                         </div>
-                    </a>
-                    
-                </div>
-            <%  }); %>
-        </div>    
-    <% } %>    
+                    </div>
+                <%  }); %>
+            </div>    
+        <% } %>    
+    </main>
 </body>
 </html>

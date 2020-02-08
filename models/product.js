@@ -1,4 +1,3 @@
-//const products = []; //old approach saving products to array
 const fs = require('fs');
 const path = require('path');
 const mongodb = require('mongodb');

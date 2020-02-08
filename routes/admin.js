@@ -5,13 +5,13 @@ const productsController = require('../controllers/shop');
 
 const products = [];
 
-router.get('/add-product', productsController.getAddProduct);
+router.get('/product-add', productsController.getAddProduct);
 
-router.post('/add-product', productsController.postAddProduct);
+router.post('product-add', productsController.postAddProduct);
 
-router.get('/edit-product/:productId', productsController.getEditProduct);
+router.get('/product-edit/:productId', productsController.getEditProduct);
 
-router.post('/update-product/:productId', productsController.postUpdateProduct);
+router.post('/product-update/:productId', productsController.postUpdateProduct);
 
 
 module.exports = router;

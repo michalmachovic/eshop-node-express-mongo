@@ -1,4 +1,4 @@
-const url = 'mongodb+srv://macho:be4icP8NWv5d3I1G@cluster0-gconm.mongodb.net/test?retryWrites=true&w=majority';
+const url = 'mongodb+srv://macho:7EfwuOmBNUmbjG2T@cluster0-gconm.mongodb.net/test?retryWrites=true&w=majority';
 const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
 
@@ -14,6 +14,7 @@ const mongoConnect = (callback) => {
       callback();
     })
     .catch(err => {
+      console.log("DB NOT CONNECTED");
       console.log(err);
     });
 };
