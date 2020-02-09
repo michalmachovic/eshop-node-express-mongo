@@ -7,7 +7,7 @@ const products = [];
 
 router.get('/product-add', productsController.getAddProduct);
 
-router.post('product-add', productsController.postAddProduct);
+router.post('/product-add', productsController.postAddProduct);
 
 router.get('/product-edit/:productId', productsController.getEditProduct);
 

@@ -7,18 +7,27 @@ const shopRoutes = require('./routes/shop');
 const adminRoutes = require('./routes/admin');
 
 const mongoConnect = require('./util/db').mongoConnect;
+const User = require('./models/user');
 
 //set template engine to EJS
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+//add this to make public folder available to serve static files, like css
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use((req, res, next) => {
+    User.findById('5e3ed9cee844e413f1269e18')
+    .then(user => {
+        req.user = user;
+        next();
+    })
+    .catch(err => console.log(err));
+})
 
 app.use(bodyParser.urlencoded({exteneded: false}));
 app.use(shopRoutes);
 app.use('/admin', adminRoutes);
-
-//add this to make public folder available to serve static files, like css
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/test', (req, res, next) => {
     res.send('<h1>testing</h1>');
