@@ -55,3 +55,26 @@ exports.postUpdateProduct = (req, res, next) => {
     Product.updateById(req.params.productId, req.body);
     res.redirect('/');
 }
+
+exports.postCart = (req, res, next) => {
+    const prodId = req.body.productId;
+    Product.fetchById(prodId)
+    .then(product => {
+        return req.user.addToCart(product);
+    })
+    .then(result => {
+        console.log(result);
+    })
+}
+
+exports.getCart = (req, res, next) => {
+    req.user
+        .getCart()
+        .then(products => {
+            res.render('shop/cart',{
+                path: '/cart',
+                pageTitle: 'Your cart',
+                products: products
+            })
+        });
+}

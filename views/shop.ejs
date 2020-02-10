@@ -25,6 +25,10 @@
                         <div class="actions">
                             <a href="/products/<%= item._id %>">Detail</a>
                             <a href="/admin/product-edit/<%= item._id %>">Edit</a>
+                            <form action="/cart" method="post">
+                                <button class="btn" type="submit">Add to cart</button>
+                                <input type="hidden" name="productId" value="<%= item._id %>" />
+                            </form>
                         </div>
                     </div>
                 <%  }); %>

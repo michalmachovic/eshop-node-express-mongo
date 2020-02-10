@@ -1,0 +1,26 @@
+<%- include('../includes/head.ejs') %>
+<title><%= pageTitle %></title>
+</head>
+
+<body>
+    <%- include('../includes/nav.ejs') %>
+    <main>
+    <h2>Products</h2>
+        <% if (products.length > 0) { %>
+            <div class="products">
+                <% products.forEach(function(item) {  %>
+                    <div>
+                        <h3>
+                            <%= item.title %>
+                        </h3>
+
+                        <div>
+                            <%= item.quantity %>
+                        </div>
+                    </div>
+                <%  }); %>
+            </div>    
+        <% } %>    
+    </main>
+</body>
+</html>
