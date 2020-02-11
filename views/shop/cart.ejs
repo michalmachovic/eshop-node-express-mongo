@@ -15,11 +15,24 @@
                         </h3>
 
                         <div>
-                            <%= item.quantity %>
+                            Quantity: <%= item.quantity %>
+                        </div>
+
+                        <div class="actions">
+                            <form action="/cart-delete-item" method="post">
+                                <button class="btn" type="submit">Delete</button>
+                                <input type="hidden" name="productId" value="<%= item._id %>" />
+                            </form>
                         </div>
                     </div>
                 <%  }); %>
             </div>    
+
+            <div class="actions">
+                <form action="/create-order" method="post">
+                    <button class="btn" type="submit">Create Order</button>
+                </form>
+            </div>
         <% } %>    
     </main>
 </body>
